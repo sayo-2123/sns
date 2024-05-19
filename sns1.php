@@ -15,6 +15,12 @@
     <div><textarea name="m"></textarea></div>
     <input type="submit" value="送信する">
   </form>
+  <?php
+  $db = new PDO("mysql:host=localhost;dbname=db", "root", "root");
+  $ps = $db->query("SELECT * FROM tb");
+  $r = $ps->fetch();
+  print "{$r['num']}{$r['name']}{$r['mes']}{$r['date']}";
+  ?>
 
 
 
